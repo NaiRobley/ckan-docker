@@ -17,21 +17,26 @@ RUN virtualenv --no-site-packages /usr/lib/ckan/default
 
 RUN . /usr/lib/ckan/default/bin/activate
 
-RUN pip install -e 'git+https://github.com/ckan/ckan.git@ckan-2.5.3#egg=ckan'
+RUN pip install -e 'git+https://github.com/andela/ckan.git@ckan-2.6.3#egg=ckan'
 
 RUN pip install -r /src/ckan/requirements.txt
 
 RUN pip install --upgrade bleach
 
-RUN pip install -e git+https://github.com/ckan/ckanext-harvest.git#egg=ckanext-harvest
+# Install OpenAfrica Extension
+RUN pip install -e git+https://github.com/andela/ckanext-openafrica.git#egg=ckanext-openafrica
 
-RUN pip install -r /src/ckanext-harvest/pip-requirements.txt
+# Install Datarequests Extension
+RUN pip install -e git+https://github.com/andela/ckanext-datarequests.git@add-voting-feature#egg=ckanext-datarequests
 
-RUN pip install -e git+https://github.com/ckan/ckanext-dcat.git#egg=ckanext-dcat
+# Install Social Extension
+RUN pip install -e git+https://github.com/edmondatto/ckanext-social.git@develop#egg=ckanext-social
 
-RUN pip install -r /src/ckanext-dcat/requirements.txt
+# Install Followy Extension
+RUN pip install -e git+https://github.com/andela/ckanext-followy.git@develop#egg=ckanext-followy
 
-RUN pip install ckanext-geoview
+# Install Socialite Extension
+RUN pip install -e git+https://github.com/codeforafricalabs/ckanext-socialite.git@1-add_facebook_auth#egg=ckanext-socialite
 
 RUN mkdir -p /etc/ckan/default
 
