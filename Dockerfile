@@ -38,6 +38,9 @@ RUN pip install -e git+https://github.com/andela/ckanext-followy.git@develop#egg
 # Install Socialite Extension
 RUN pip install -e git+https://github.com/codeforafricalabs/ckanext-socialite.git@1-add_facebook_auth#egg=ckanext-socialite
 
+# Install PDF View Extension
+RUN pip install -e git+https://github.com/ckan/ckanext-pdfview.git#egg=ckanext-pdfview
+
 RUN mkdir -p /etc/ckan/default
 
 COPY ./default.ini /etc/ckan/default
