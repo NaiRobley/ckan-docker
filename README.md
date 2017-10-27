@@ -2,8 +2,6 @@
 
 *CKAN and friends running in Docker with the DCAT harvesting extension*
 
-point of conflict
-
 ## How to federate from an ArcGIS Open Data Site
 
 1. run `docker-compose up`
